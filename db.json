@@ -1,0 +1,18 @@
+{
+  "passwords": [
+    {
+      "id": "1",
+      "category": "work",
+      "app": "gmail",
+      "userName": "testuser@mytest.com",
+      "encryptedPassword": "TXpRMU1qTTBOalUyTWpRPQ=="
+    },
+    {
+      "id": "2",
+      "category": "school",
+      "app": "messenger",
+      "userName": "testuser@mytest.com",
+      "encryptedPassword": "TmV3UGFzc3dvcmRAMTIz"
+    }
+  ]
+}
