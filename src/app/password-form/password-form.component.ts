@@ -13,6 +13,8 @@ export class PasswordFormComponent implements OnInit {
   passwordForm!: FormGroup;
   password: Password | null = null;
   id: string | number | null = null;
+  isDecrypted: boolean = false;
+  
   constructor(
     private formBuilder: FormBuilder,
     private passwordService: PasswordService,
@@ -28,16 +30,19 @@ export class PasswordFormComponent implements OnInit {
       encryptedPassword: ['', Validators.required],
     });
     this.getPassword();
+    console.error("function fetched correctly");
   }
 
   onSubmit(): void {
     if (this.passwordForm.valid) {
+      const encryptedPassword = btoa(this.passwordForm.value.encryptedPassword);
+
       if (this.id) {
         this.passwordService
           .updatePassword({
             id: this.id,
             ...this.passwordForm.value,
-            encryptedPassword: btoa(this.passwordForm.value.encryptedPassword),
+            encryptedPassword: encryptedPassword,
           })
           .subscribe(() => {
             console.log('Password added successfully.');
@@ -46,7 +51,7 @@ export class PasswordFormComponent implements OnInit {
           });
       } else {
         this.passwordService
-          .addPassword(this.passwordForm.value)
+          .addPassword({ ...this.passwordForm.value, encryptedPassword: encryptedPassword })
           .subscribe(() => {
             console.log('Password added successfully.');
             this.passwordForm.reset();
@@ -66,15 +71,17 @@ export class PasswordFormComponent implements OnInit {
         this.passwordService
           .getPassword(parsedId)
           .subscribe((password: any) => {
+            console.log(password);
             this.password = {
               ...password,
               encryptedPassword: atob(password.encryptedPassword),
             };
+            console.log(this.password);
             this.id = password.id;
             delete password['id'];
             this.passwordForm.reset(password);
           });
-      } else {
+              } else {
         console.error('ID not provided.');
       }
     } else {
@@ -82,3 +89,5 @@ export class PasswordFormComponent implements OnInit {
     }
   }
 }
+
+

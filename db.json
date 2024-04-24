@@ -1,18 +1,25 @@
 {
   "passwords": [
     {
-      "id": "1",
-      "category": "work",
-      "app": "gmail",
-      "userName": "testuser@mytest.com",
-      "encryptedPassword": "TXpRMU1qTTBOalUyTWpRPQ=="
+      "id": "6aac",
+      "category": "Work",
+      "app": "Facebook",
+      "userName": "Neha4570",
+      "encryptedPassword": "U29uaWF0aGJmZw=="
     },
     {
-      "id": "2",
-      "category": "school",
-      "app": "messenger",
-      "userName": "testuser@mytest.com",
-      "encryptedPassword": "TmV3UGFzc3dvcmRAMTIz"
+      "id": "17a3",
+      "category": "Office",
+      "app": "Instagram",
+      "userName": "SonaSharma",
+      "encryptedPassword": "TmVoYWpoZmc="
+    },
+    {
+      "id": "819c",
+      "category": "School",
+      "app": "Snap",
+      "userName": "MonaSharma",
+      "encryptedPassword": "TW9uYSY2NzU="
     }
   ]
 }

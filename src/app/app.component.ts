@@ -12,4 +12,7 @@ export class AppComponent {
   navigateToPasswords(url:string) {
     this.router.navigateByUrl(url);
   }
+  encryptPassword(password: string): string {
+    return btoa(password);
+  }
 }

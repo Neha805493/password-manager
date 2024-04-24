@@ -29,6 +29,11 @@ export class PasswordService {
     return this.http.put<Password>(url, password);
   }
 
+  // updatePassword(passwordData: Password): Observable<Password> {
+  //   const url = `${this.apiUrl}/${passwordData.id}`;
+  //   return this.http.put<Password>(url, passwordData);
+  // }
+
   deletePassword(id: number|string): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);

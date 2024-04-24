@@ -1,9 +1,15 @@
 <!-- app.component.html -->
 
-<h1>Welcome to Password Manager</h1>
-
-<!-- Button to navigate to PasswordListComponent -->
-<button (click)="navigateToPasswords('/add-password')">Add Passwords</button>
-<button (click)="navigateToPasswords('/passwords')">Password List</button>
-
-<router-outlet></router-outlet>
+<div class="container">
+    <h1>Welcome to Password Manager</h1>
+  
+    <!-- Container for buttons -->
+    <div class="buttons-container">
+      <!-- Buttons to navigate to PasswordListComponent -->
+      <button (click)="navigateToPasswords('/add-password')">Add Passwords</button>
+      <button (click)="navigateToPasswords('/passwords')">Password List</button>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+  
